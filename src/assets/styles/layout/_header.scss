@@ -1,1 +1,22 @@
 @use "../foundation" as v;
+
+.l-header {
+  height: 60px;
+  background-color: v.$color-primary;
+  display: flex;
+  justify-content: flex-end;
+
+  .l-header__nav-list {
+    display: flex;
+    margin-right: 3rem;
+
+    .l-header__nav-item {
+      margin-left: 2rem;
+
+      .l-header__nav-icon {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

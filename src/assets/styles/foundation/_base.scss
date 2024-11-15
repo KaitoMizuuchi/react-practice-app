@@ -9,6 +9,15 @@ html {
   font-size: 62.5%;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: v.$color-bg;
 }
