@@ -7,7 +7,9 @@ function App() {
     <div className="app">
       <Header />
       <main className="l-main">
-        <Router />
+        <div className="l-main__container">
+          <Router />
+        </div>
       </main>
     </div>
   );
