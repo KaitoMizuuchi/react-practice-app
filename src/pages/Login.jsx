@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InputLabel from "../feature/login/components/InputLabel";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { validationRequired } from "../utils/validation";
 
 const Login = () => {
   //パスワードの状態管理
@@ -14,11 +15,9 @@ const Login = () => {
     mail: "",
     password: "",
   });
-
   const handleInputChange = (id, value) => {
     setInputData({ ...inputData, [id]: value });
   };
-  console.log(inputData);
 
   // ログインボタンが押された時の処理
   const navigate = useNavigate();
@@ -27,23 +26,17 @@ const Login = () => {
     password: "",
   });
   const handleLogin = () => {
-    if (!inputData.mail.trim()) {
-      setError((prevError) => ({
-        ...prevError,
-        mail: "メールアドレスを入力してください",
-      }));
-    }
-    if (!inputData.password.trim()) {
-      setError((prevError) => ({
-        ...prevError,
-        password: "パスワードを入力してください",
-      }));
+    const errors = {};
+    errors.mail = validationRequired(inputData.mail, "メールアドレス");
+    errors.password = validationRequired(inputData.password, "パスワード");
+
+    if (errors.mail !== "" || errors.password !== "") {
+      setError(errors);
       return;
     }
+
     navigate("/home");
   };
-
-  console.log(error);
 
   return (
     <div className="p-login">
