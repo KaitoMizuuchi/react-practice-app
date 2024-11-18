@@ -7,6 +7,7 @@ import ChatForm from "../feature/home/components/ChatForm";
 export const ChatContext = createContext();
 
 const Home = () => {
+  // チャット全体のデータを管理
   const [chatData, setChatData] = useState([]);
 
   // 入力した内容を取得

@@ -24,6 +24,7 @@ const ChatForm = ({ handleInputChange, onButtonClick, error }) => {
           id="msg"
           className="p-chat__form-input"
           value={inputData.msg}
+          placeholder="メッセージを入力"
           onChange={(e) => handleInputChange(e.target.id, e.target.value)}
         />
         {error && error.msg !== "" ? (
