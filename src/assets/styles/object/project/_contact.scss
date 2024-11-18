@@ -12,6 +12,7 @@
   .p-contact__form {
     margin-top: 3rem;
     .p-contact__form-label {
+      position: relative;
       // インプットのタイトル部分
       .p-contact__form-label-title {
         font-size: v.$font-size-sm;
@@ -60,11 +61,41 @@
           outline: none;
         }
       }
+
+      .p-contact__form-error {
+        font-size: v.$font-size-xs;
+        color: v.$color-error;
+        position: absolute;
+        bottom: -3.5rem;
+
+        &.--sm-bottom {
+          bottom: -1.5rem;
+        }
+      }
+
+      .p-contact__confirm-text {
+        height: 50px;
+        font-size: v.$font-size-md;
+        margin-bottom: 4rem;
+      }
+
+      .--large-height {
+        min-height: 210px;
+        margin-bottom: 0;
+      }
     }
 
     .p-contact__form-btn-wrapper {
       text-align: center;
       margin-top: 2rem;
+
+      .p-content__form-send-btn {
+        margin: 0 5rem;
+        &.--blue {
+          color: v.$color-white;
+          background-color: v.$color-primary;
+        }
+      }
     }
   }
 }

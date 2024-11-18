@@ -1,10 +1,10 @@
 import React from "react";
 
-const Button = ({ width, label, onButtonClick }) => {
+const Button = ({ width, label, onButtonClick, className }) => {
   return (
     <button
       type="button"
-      className="c-login__form-btn"
+      className={`c-login__form-btn ${className}`}
       style={{ width }}
       onClick={onButtonClick}
     >

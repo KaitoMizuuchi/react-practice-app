@@ -16,7 +16,7 @@ const Home = () => {
     status: "you",
   });
   const handleInputChange = (id, value) => {
-    setInputData((prevData) => ({ ...prevData, [id]: value }));
+    setInputData({ ...inputData, [id]: value });
   };
 
   // バリデーションの状態管理

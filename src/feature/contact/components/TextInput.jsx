@@ -7,6 +7,8 @@ const TextInput = ({
   placeholder,
   isRequired,
   handleInputChange,
+  isConfirm,
+  errorMsg,
 }) => {
   return (
     <label htmlFor={id} className="p-contact__form-label">
@@ -16,14 +18,22 @@ const TextInput = ({
           <span className="p-contact__form-label-chip">必須</span>
         ) : null}
       </p>
-      <input
-        type="text"
-        id={id}
-        className="p-contact__form-input"
-        value={value}
-        placeholder={placeholder}
-        onChange={handleInputChange}
-      />
+      {/* 確認画面かどうか確認 */}
+      {!isConfirm ? (
+        <>
+          <input
+            type="text"
+            id={id}
+            className="p-contact__form-input"
+            value={value}
+            placeholder={placeholder}
+            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+          />
+          {errorMsg && <p className="p-contact__form-error">{errorMsg}</p>}
+        </>
+      ) : (
+        <p className="p-contact__confirm-text">{value}</p>
+      )}
     </label>
   );
 };

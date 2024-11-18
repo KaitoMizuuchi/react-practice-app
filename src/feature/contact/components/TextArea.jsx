@@ -7,6 +7,8 @@ const TextArea = ({
   placeholder,
   isRequired,
   handleInputChange,
+  isConfirm,
+  errorMsg,
 }) => {
   return (
     <label htmlFor={id} className="p-contact__form-label">
@@ -16,13 +18,23 @@ const TextArea = ({
           <span className="p-contact__form-label-chip">必須</span>
         ) : null}
       </p>
-      <textarea
-        id={id}
-        className="p-contact__form-textarea"
-        value={value}
-        placeholder={placeholder}
-        onChange={handleInputChange}
-      ></textarea>
+      {/* 確認画面かどうか確認 */}
+      {!isConfirm ? (
+        <>
+          <textarea
+            id={id}
+            className="p-contact__form-textarea"
+            value={value}
+            placeholder={placeholder}
+            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+          ></textarea>
+          {errorMsg && (
+            <p className="p-contact__form-error --sm-bottom">{errorMsg}</p>
+          )}
+        </>
+      ) : (
+        <p className="p-contact__confirm-text --large-height">{value}</p>
+      )}
     </label>
   );
 };
