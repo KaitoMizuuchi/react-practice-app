@@ -25,7 +25,8 @@ const Login = () => {
     mail: "",
     password: "",
   });
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     const errors = {};
     errors.mail = validationRequired(inputData.mail, "メールアドレス");
     errors.password = validationRequired(inputData.password, "パスワード");

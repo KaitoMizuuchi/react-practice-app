@@ -4,7 +4,7 @@ const Button = ({ width, label, onButtonClick, className }) => {
   return (
     <button
       type="button"
-      className={`c-login__form-btn ${className}`}
+      className={`c-btn ${className}`}
       style={{ width }}
       onClick={onButtonClick}
     >

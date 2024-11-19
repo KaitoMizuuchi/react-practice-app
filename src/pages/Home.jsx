@@ -36,7 +36,8 @@ const Home = () => {
   };
 
   // setChatDataにinputDataの情報を入れる。
-  const handleSendMessage = () => {
+  const handleSendMessage = (e) => {
+    e.preventDefault();
     // バリデーションチェック
     const errors = {};
     errors.msg = validationRequired(inputData.msg, "メッセージ");

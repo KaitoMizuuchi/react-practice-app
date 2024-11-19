@@ -31,7 +31,8 @@ const Contact = () => {
   };
 
   // 「確認画面へ」をを押したときの処理
-  const toggleTransition = () => {
+  const toggleTransition = (e) => {
+    e.preventDefault();
     const errors = validatedInput();
     // errorsの中身に文字列がないか確認する。
     const hasErrors = Object.values(errors).some((error) => error !== "");
@@ -46,7 +47,8 @@ const Contact = () => {
 
   //「送信」ボタンを押したときの処理
   const navigate = useNavigate();
-  const handleSend = () => {
+  const handleSend = (e) => {
+    e.preventDefault();
     window.confirm(
       `name：${inputData.name}\nmail：${inputData.mail}\ncontent：${inputData.content}\n上記の内容で送信します。`
     );
