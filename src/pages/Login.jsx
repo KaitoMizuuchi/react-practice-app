@@ -6,9 +6,11 @@ import { validationRequired } from "../utils/validation";
 
 const Login = () => {
   //パスワードの状態管理
-  const [type, setType] = useState("password");
+  const PASSWORD = "password";
+  const TEXT = "text";
+  const [type, setType] = useState(PASSWORD);
   const togglePassOpen = () =>
-    setType((prevType) => (prevType === "password" ? "text" : "password"));
+    setType((prevType) => (prevType === PASSWORD ? TEXT : PASSWORD));
 
   // 入力された値の取得
   const [inputData, setInputData] = useState({
