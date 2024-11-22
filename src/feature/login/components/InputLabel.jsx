@@ -13,9 +13,8 @@ const InputLabel = ({
   handleInputChange,
   togglePassOpen,
 }) => {
-  const labelClassName = `p-login__label${isSpace ? " --mt-4" : ""}`;
   return (
-    <label htmlFor="mail" className={labelClassName}>
+    <label htmlFor={id} className={`p-login__label ${isSpace ? "--mt-4" : ""}`}>
       <p className="p-login__label-title">{label}</p>
       <div className="p-login__input-box">
         <input
@@ -24,9 +23,9 @@ const InputLabel = ({
           className="p-login__input"
           placeholder={placeholder}
           value={value}
-          onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+          onChange={handleInputChange}
         />
-        {label === "password" ? (
+        {id === "password" ? (
           <IconButton
             sx={{
               position: "absolute",

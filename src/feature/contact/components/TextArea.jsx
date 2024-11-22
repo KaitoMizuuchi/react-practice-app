@@ -26,7 +26,7 @@ const TextArea = ({
             className="p-contact__form-textarea"
             value={value}
             placeholder={placeholder}
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+            onChange={handleInputChange}
           ></textarea>
           {errorMsg && (
             <p className="p-contact__form-error --sm-bottom">{errorMsg}</p>

@@ -12,7 +12,8 @@ const Contact = () => {
     mail: "",
     content: "",
   });
-  const handleInputChange = (id, value) => {
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
     setInputData({ ...inputData, [id]: value });
   };
 
@@ -27,16 +28,18 @@ const Contact = () => {
     errors.mail = validationRequired(inputData.mail, "メールアドレス");
     errors.content = validationRequired(inputData.content, "お問い合わせ内容");
 
-    return errors;
+    // errorsの中にエラーメッセージがあるか確認
+    const hasErrorMsg = Object.values(errors).some((error) => error !== "");
+
+    return { errors, hasErrorMsg };
   };
 
   // 「確認画面へ」をを押したときの処理
   const toggleTransition = (e) => {
     e.preventDefault();
-    const errors = validatedInput();
-    // errorsの中身に文字列がないか確認する。
-    const hasErrors = Object.values(errors).some((error) => error !== "");
-    if (hasErrors) {
+    const { errors, hasErrorMsg } = validatedInput();
+
+    if (hasErrorMsg) {
       setError(errors);
       return;
     }
@@ -50,7 +53,10 @@ const Contact = () => {
   const handleSend = (e) => {
     e.preventDefault();
     window.confirm(
-      `name：${inputData.name}\nmail：${inputData.mail}\ncontent：${inputData.content}\n上記の内容で送信します。`
+      `name：${inputData.name}\n
+      mail：${inputData.mail}\n
+      content：${inputData.content}\n
+      上記の内容で送信します。`
     );
     navigate("/home");
   };

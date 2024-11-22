@@ -17,7 +17,8 @@ const Login = () => {
     mail: "",
     password: "",
   });
-  const handleInputChange = (id, value) => {
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
     setInputData({ ...inputData, [id]: value });
   };
 
@@ -40,7 +41,6 @@ const Login = () => {
 
     navigate("/home");
   };
-
   return (
     <div className="p-login">
       <h1 className="p-login__title">ログイン画面</h1>

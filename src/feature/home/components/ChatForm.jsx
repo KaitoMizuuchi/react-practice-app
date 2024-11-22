@@ -12,7 +12,7 @@ const ChatForm = ({ handleInputChange, onButtonClick, error }) => {
         id="status"
         className="p-chat__form-select"
         value={inputData.status}
-        onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+        onChange={handleInputChange}
       >
         <option value="you">you</option>
         <option value="me">me</option>
@@ -25,7 +25,7 @@ const ChatForm = ({ handleInputChange, onButtonClick, error }) => {
           className="p-chat__form-input"
           value={inputData.msg}
           placeholder="メッセージを入力"
-          onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+          onChange={handleInputChange}
         />
         {error && error.msg !== "" ? (
           <p className="p-chat__form-input-error">{error.msg}</p>

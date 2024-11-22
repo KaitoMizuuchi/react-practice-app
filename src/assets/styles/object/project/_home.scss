@@ -2,6 +2,7 @@
 
 .p-chat {
   width: 100%;
+  margin-top: 2rem;
 
   .p-chat__title {
     margin: 0;
@@ -9,8 +10,8 @@
   }
 
   .p-chat__box {
-    height: 70vh;
-    max-height: 610px;
+    height: 68vh;
+    max-height: 600px;
     background-color: v.$color-white;
     box-shadow: v.$box-shadow-box;
     border-radius: 20px;

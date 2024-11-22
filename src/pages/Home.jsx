@@ -16,7 +16,8 @@ const Home = () => {
     date: "",
     status: "you",
   });
-  const handleInputChange = (id, value) => {
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
     setInputData({ ...inputData, [id]: value });
   };
 

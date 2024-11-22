@@ -2,19 +2,12 @@
 
 .l-main {
   width: 100%;
-  margin: 0 auto;
-  min-height: calc(100vh - 60px);
-  height: auto;
-  padding: 0 50px;
   position: relative;
 
   .l-main__container {
+    max-height: calc(100vh - 60px);
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }

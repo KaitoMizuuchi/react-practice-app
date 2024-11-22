@@ -27,7 +27,7 @@ const TextInput = ({
             className="p-contact__form-input"
             value={value}
             placeholder={placeholder}
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
+            onChange={handleInputChange}
           />
           {errorMsg && <p className="p-contact__form-error">{errorMsg}</p>}
         </>
